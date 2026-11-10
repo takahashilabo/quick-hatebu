@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="はてな連携設定"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="「連携する」を押し、ブラウザではてなにログインして許可してください。"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/reconnectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="連携をやり直す"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="連携する" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/verifierLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ブラウザの許可画面に表示された認証コードを入力してください。"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/verifierInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="認証コード"
+        android:inputType="text"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/submitVerifierButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="コードを送信して連携完了"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>
