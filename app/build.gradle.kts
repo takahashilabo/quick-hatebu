@@ -39,9 +39,22 @@ android {
         buildConfig = true
     }
 
+    signingConfigs {
+        create("release") {
+            val storeFilePath = localProperties.getProperty("release.storeFile")
+            if (storeFilePath != null) {
+                storeFile = rootProject.file(storeFilePath)
+                storePassword = localProperties.getProperty("release.storePassword")
+                keyAlias = localProperties.getProperty("release.keyAlias")
+                keyPassword = localProperties.getProperty("release.keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
